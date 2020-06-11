@@ -1,0 +1,32 @@
+{
+  "name": "RestaurantOrder",
+  "fields": [
+    {
+      "fieldName": "orderNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "total",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "restaurantOrder",
+      "relationshipName": "orderList"
+    }
+  ],
+  "changelogDate": "20200610112605",
+  "entityTableName": "restaurant_order",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

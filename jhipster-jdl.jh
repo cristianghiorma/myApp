@@ -1,0 +1,45 @@
+entity City {
+	cityName String
+}
+
+entity Order {
+	totalPrice Integer
+}
+
+entity RestaurantOrder{
+	 orderNumber Integer,
+     total Integer
+    
+}
+
+entity Restaurant {
+	restaurantName String
+}
+
+entity Product {
+	productName String
+    productPrice Integer
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	streetAddress String
+}
+
+relationship OneToMany {
+	Restaurant{product} to Product
+	RestaurantOrder{orderList} to Order
+    Order{product} to Product
+}
+
+relationship ManyToOne {
+	Restaurant{city} to City
+}
+
+relationship OneToOne {
+    Restaurant{restaurantOrder} to RestaurantOrder
+	Restaurant{location} to Location
+}
+
+service all with serviceImpl

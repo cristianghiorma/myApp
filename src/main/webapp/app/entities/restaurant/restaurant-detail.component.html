@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="restaurant">
+            <h2><span>Restaurant</span> {{ restaurant.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Restaurant Name</span></dt>
+                <dd>
+                    <span>{{ restaurant.restaurantName }}</span>
+                </dd>
+                <dt><span>Restaurant Order</span></dt>
+                <dd>
+                    <div *ngIf="restaurant.restaurantOrder">
+                        <a [routerLink]="['/restaurant-order', restaurant.restaurantOrder?.id, 'view']">{{ restaurant.restaurantOrder?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Location</span></dt>
+                <dd>
+                    <div *ngIf="restaurant.location">
+                        <a [routerLink]="['/location', restaurant.location?.id, 'view']">{{ restaurant.location?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>City</span></dt>
+                <dd>
+                    <div *ngIf="restaurant.city">
+                        <a [routerLink]="['/city', restaurant.city?.id, 'view']">{{ restaurant.city?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/restaurant', restaurant.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

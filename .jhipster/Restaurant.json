@@ -1,0 +1,51 @@
+{
+  "name": "Restaurant",
+  "fields": [
+    {
+      "fieldName": "restaurantName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "restaurantOrder",
+      "otherEntityRelationshipName": "restaurant",
+      "relationshipName": "restaurantOrder",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "restaurant",
+      "relationshipName": "location",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "restaurant",
+      "relationshipName": "product"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "city",
+      "otherEntityRelationshipName": "restaurant",
+      "relationshipName": "city",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200610112705",
+  "entityTableName": "restaurant",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

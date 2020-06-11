@@ -1,0 +1,35 @@
+{
+  "name": "Order",
+  "fields": [
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "product"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "restaurantOrder",
+      "otherEntityRelationshipName": "orderList",
+      "relationshipName": "restaurantOrder",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200610112505",
+  "entityTableName": "order",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
